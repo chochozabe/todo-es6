@@ -29,6 +29,7 @@ body {
   flex-wrap: nowrap;
   flex-direction: row;
   height: 3rem;
+  width: 100%;
   border-bottom: 1px solid #ddd;
   justify-content: flex-start;
   align-items: center;
