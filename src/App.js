@@ -17,13 +17,13 @@ export default class App {
       todos: this.todos,
       checkTodoHandler: (todoId) => this.checkTodoHandler(todoId),
       deleteTodoHandler: (todoId) => this.deleteTodoHandler(todoId),
+      editTodoHandler: (e, todoId) => this.editTodoHandler(e, todoId),
     });
 
     this.init();
   }
 
   setTodos(newTodos) {
-    console.log(newTodos);
     this.todos = newTodos;
     this.todoList.setTodos(this.todos);
     this.saveTodos();
@@ -53,8 +53,15 @@ export default class App {
     this.setTodos(newTodos);
   }
 
+  editTodoHandler(e, todoId) {
+    console.log(e);
+    const newTodos = this.todos;
+    newTodos.find((todo) => todo.id === todoId).content = e.value;
+
+    this.setTodos(newTodos);
+  }
+
   checkTodoHandler(todoId) {
-    console.log(todoId);
     const newTodos = this.todos.map((todo) => {
       if (todo.id === todoId) {
         return {
