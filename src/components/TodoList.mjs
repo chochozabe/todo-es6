@@ -34,9 +34,6 @@ export default class TodoList {
     inputElem.value = inputText;
     inputElem.classList.add("todo-input");
 
-    console.log(todoElem);
-    console.log(todoElem.childNodes[0]);
-
     inputElem.addEventListener("keypress", (e) => {
       if (e.key === "Enter") {
         console.log(e.target);
